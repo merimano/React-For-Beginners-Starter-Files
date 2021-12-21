@@ -14,18 +14,16 @@ class AddFishForm extends React.Component {
         // 2. Get the text from the form and create a fish instance
         const fish = {
             name: this.nameRef.current.value,
-            price: this.priceRef.current.value,
+            price: parseFloat(this.priceRef.current.value),
             status: this.statusRef.current.value,
             desc: this.descRef.current.value,
             image: this.imageRef.current.value
         };
-        console.log(fish);
+        this.props.addFish(fish);
+        // Refresh the form
+        event.currentTarget.reset();
     }
-
-   
-    
     // 3. Create a new instance of a fish and update the page.
-
     render() {
         return (
             // Add an inline eventlistener
