@@ -5,14 +5,19 @@ import Inventory from "./Inventory.js";
 import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
 import base from "../base";
+import PropTypes from "prop-types";
 class App extends React.Component {
 
 // Every custom function that need sto update state needs to live in the App-component.
-
     state = {
         fishes: {},
         order: {}
     };
+
+    static props = {
+        match: PropTypes.Object
+    }
+
     // Sync the state and the database. componentDidMount method runs after the component output has been rendered to the DOM.
     componentDidMount() {
         // Get the name of the store

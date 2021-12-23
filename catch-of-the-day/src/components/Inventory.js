@@ -1,8 +1,22 @@
 import React from "react";
 import AddFishForm from "./AddFishForm";
 import EditFishForm from "./EditFishForm";
+import PropTypes from "prop-types";
+import Login from "./Login";
 class Inventory extends React.Component {
+    static propTypes = {
+        fishes: PropTypes.object,
+        updateFish: PropTypes.func,
+        deleteFish: PropTypes.func,
+        loadSampleFish: PropTypes.func
+    };
+
+    authenticate = () => {
+        alert('Ya')
+    };
+
     render() {
+        return <Login authenticate={this.authenticate} />;
         return (
             <div className="inventory">
                 <h2>Inventory!!!</h2>
