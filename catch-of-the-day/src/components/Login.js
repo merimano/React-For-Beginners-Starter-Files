@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 const Login = (props) => (
+
+
+    //Below is a stateless function, thus this.props is not needed, only props.
     <nav className="login">
         <h2>Inventory Login</h2>
         <p>Sign In to access your fish</p>
